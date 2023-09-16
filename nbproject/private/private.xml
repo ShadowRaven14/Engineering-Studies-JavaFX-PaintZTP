@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/PaintView.fxml</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/FilterAlgorithms/BinarizationAlgorithm.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/FilterAlgorithms/AveragingAlgorithm.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/FilterAlgorithms/MedianAlgorithm.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/FilterAlgorithms/FileHandler.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/FilterAlgorithms/EdgeDetectorAlgorithm.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/FilterAlgorithms/HistogramAlgorithm.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/PaintZTP.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/PaintZTP/src/paintztp/PaintController.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.PerspectiveCamera?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Box?>
+
+<Pane fx:id="paneBestPaintID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="1434.0" style="-fx-background-color: #FFFFFF;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paintztp.PaintController">
+   <children>
+      <VBox fx:id="viewBox" prefHeight="50.0" prefWidth="1280.0">
+         <children>
+            <HBox prefHeight="59.0" prefWidth="1434.0" style="-fx-background-color: #F4A460;">
+               <children>
+                  <MenuButton fx:id="cleanmenuID" mnemonicParsing="false" style="-fx-background-color: #D2691E; -fx-font-size: 17; -fx-font-weight: bold;" text="Clean">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <items>
+                        <MenuItem fx:id="newcanvasID" mnemonicParsing="false" onAction="#NewCanvas" text="Paint" />
+                        <MenuItem mnemonicParsing="false" text="PPM" />
+                        <MenuItem mnemonicParsing="false" text="3D" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="filemenuID" mnemonicParsing="false" style="-fx-background-color: #D2691E; -fx-font-size: 17; -fx-font-weight: bold;" text="File">
+                     <items>
+                        <MenuItem fx:id="openID" mnemonicParsing="false" onAction="#OpenFromFile" text="Open" />
+                        <MenuItem fx:id="saveID" mnemonicParsing="false" onAction="#SaveToFile" text="Save" />
+                        <MenuItem fx:id="openP3ID" mnemonicParsing="false" onAction="#OpenP3FromFile" text="Open P3" />
+                        <MenuItem fx:id="openV2ID" mnemonicParsing="false" onAction="#OpenFromFileV2" text="OpenV2" />
+                     </items>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <MenuButton fx:id="AlgorithmsID" mnemonicParsing="false" style="-fx-background-color: #CD853F; -fx-font-size: 17; -fx-font-weight: bold;" text="Algorithms">
+                     <items>
+                        <MenuItem fx:id="btnMedianID" mnemonicParsing="false" onAction="#onMedianBtnClick" text="Median" />
+                        <MenuItem mnemonicParsing="false" onAction="#onAverageBtnClick" text="Average" />
+                        <MenuItem mnemonicParsing="false" onAction="#onEdgesBtnClick" text="Edges" />
+                     </items>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <MenuButton fx:id="OperationsID" mnemonicParsing="false" style="-fx-background-color: #CD853F; -fx-font-size: 17; -fx-font-weight: bold;" text="Operations">
+                     <items>
+                        <MenuItem fx:id="btnAddImageID" mnemonicParsing="false" onAction="#onAddBtnClick" text="Add" />
+                        <MenuItem fx:id="btnSubstractImageID" mnemonicParsing="false" onAction="#onSubtractBtnClick" text="Substract" />
+                        <MenuItem fx:id="btnMultiplyImageID" mnemonicParsing="false" onAction="#onMultiplyBtnClick" text="Multiply" />
+                        <MenuItem fx:id="btnDivideImageID" mnemonicParsing="false" onAction="#onDivideBtnClick" text="Divide" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMultiplyBtnClick" text="BrithnessUp" />
+                        <MenuItem mnemonicParsing="false" onAction="#onDivideBtnClick" text="BrithnessDown" />
+                        <MenuItem mnemonicParsing="false" onAction="#onGrayscaleBtnClick1" text="Grayscale1" />
+                        <MenuItem mnemonicParsing="false" onAction="#onGrayscaleBtnClick2" text="Grayscale2" />
+                     </items>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <MenuButton fx:id="toolmenuID" mnemonicParsing="false" style="-fx-background-color: #CD853F; -fx-font-size: 17; -fx-font-weight: bold;" text="Tool Menu">
+                    <items>
+                        <MenuItem fx:id="btnLineID" mnemonicParsing="false" onAction="#SelectLine" text="Line" />
+                        <MenuItem fx:id="btnCircleID" mnemonicParsing="false" onAction="#SelectCircle" text="Circle" />
+                        <MenuItem fx:id="btnTriangleID" mnemonicParsing="false" onAction="#SelectTriangle" text="Triangle" />
+                        <MenuItem fx:id="btnRectangleID" mnemonicParsing="false" onAction="#SelectRectangle" text="Rectangle" />
+                        <MenuItem fx:id="btn3DCubeID" mnemonicParsing="false" onAction="#select3DCube" text="3D Cube" />
+                    </items>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <TextField fx:id="brushsizeID" alignment="CENTER" prefHeight="33.0" prefWidth="71.0" promptText="5" style="-fx-background-color: #DAA520; -fx-font-size: 18; -fx-font-weight: bold;" text="5">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ColorPicker fx:id="colorpickerID" onAction="#changeColor" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <value>
+                        <Color />
+                     </value>
+                  </ColorPicker>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tableviewID" layoutX="1270.0" layoutY="-1.0" prefHeight="719.0" prefWidth="166.0" style="-fx-background-color: #F5DEB3; -fx-font-size: 14;">
+        <columns>
+          <TableColumn fx:id="firstColumnID" prefWidth="163.0" style="-fx-background-color: #F5DEB3; -fx-font-size: 18;" text="Figury" />
+        </columns>
+      </TableView>
+      <TextArea layoutY="720.0" prefHeight="90.0" prefWidth="214.0" promptText="Witaj użytkowniku!Zapoznaj się z instrukcjami umieszczonymi po prawej stronie ;)" style="-fx-font-weight: bold; -fx-font-style: ITALIC; -fx-background-color: #F5DEB3;" text="Witaj użytkowniku!&#10;Zapoznaj się z instrukcjami &#10;umieszczonymi po prawej &#10;stronie ;)" />
+      <TextArea layoutX="214.0" layoutY="720.0" prefHeight="90.0" prefWidth="611.0" promptText="Gdy Twoja myszka znajduje się na Płótnie:Wciśnij i poruszaj lewym przyciskiem myszy - aby przemieszczać wybrane figuryWciśnij i poruszaj prawym przyciskiem myszy - aby skalować wybrane figuryWciśnij lewy przycisk myszy - aby zmienić kolor wybranych figur" style="-fx-font-weight: bold; -fx-font-style: ITALIC; -fx-background-color: #F5DEB3;" text="Gdy Twoja myszka znajduje się na Płótnie:&#10;Wciśnij i poruszaj lewym przyciskiem myszy - aby przemieszczać wybrane figury&#10;Wciśnij i poruszaj prawym przyciskiem myszy - aby skalować wybrane figury&#10;Wciśnij lewy przycisk myszy - aby zmienić kolor wybranych figur" />
+      <TextArea layoutX="823.0" layoutY="720.0" prefHeight="90.0" prefWidth="611.0" promptText="Gdy Twoja myszka znajduje się na TabeliKliknij na nazwę lewym przyciskiem myszy - aby edytować wszystkie obiekty tej samej nazwyKliknij dwukrotnie na nazwę lewym przyciskiem myszy - aby edytować nazwę obiektuKliknij na nazwę prawym przyciskiem myszy - aby usunąć dany obiekt" style="-fx-font-weight: bold; -fx-font-style: ITALIC; -fx-background-color: #F5DEB3;" text="Gdy Twoja myszka znajduje się na Tabeli:&#10;Kliknij na nazwę lewym przyciskiem myszy - aby edytować wszystkie obiekty tej samej nazwy&#10;Kliknij dwukrotnie na nazwę lewym przyciskiem myszy - aby edytować nazwę obiektu&#10;Kliknij na nazwę prawym przyciskiem myszy - aby usunąć dany obiekt" />
+      <TabPane fx:id="tabpaneID" layoutX="9.0" layoutY="63.0" prefHeight="647.0" prefWidth="1262.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Paint">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Canvas fx:id="canvasID" height="592.0" layoutX="4.0" layoutY="14.0" width="1254.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="PPM">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="552.0" prefWidth="1248.0">
+                     <children>
+                        <ImageView fx:id="imageViewID" fitHeight="584.0" fitWidth="1250.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="3D">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Group fx:id="cubegroupID" layoutX="53.0" layoutY="53.0" />
+                        <PerspectiveCamera fx:id="cubecameraID" layoutX="435.0" layoutY="154.0" />
+                        <Box fx:id="boxID" depth="100" height="100" layoutX="631.0" layoutY="272.0" visible="false" width="100" />
+                        <Canvas fx:id="secondcanvasID" height="570.0" layoutX="14.0" layoutY="14.0" width="1235.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Transformation">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="imageViewTransID" fitHeight="584.0" fitWidth="1250.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Histogram &amp; Binarization">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="imageViewHistID" fitHeight="428.0" fitWidth="538.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imageViewBinarID" fitHeight="428.0" fitWidth="538.0" layoutX="710.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <HBox layoutY="810.0" prefHeight="59.0" prefWidth="1434.0" style="-fx-background-color: #F4A460;">
+         <children>
+            <Button fx:id="transformcolorID" mnemonicParsing="false" onAction="#transformCurrentColor" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;" text="Transform Color" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <TextField fx:id="rID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="255" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="255">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="gID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="255" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="255">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="bID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="255" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="255">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="transformcolorID1" mnemonicParsing="false" onAction="#RGBtoCMYK" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;" text="RGB-&gt;CMYK" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <TextField fx:id="cID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="100" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="100">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin></TextField>
+            <TextField fx:id="mID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="100" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="100">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin></TextField>
+            <TextField fx:id="yID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="100" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="100">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin></TextField>
+            <TextField fx:id="kID" alignment="CENTER" prefHeight="34.0" prefWidth="55.0" promptText="100" style="-fx-background-color: #FFFAFA; -fx-font-size: 18; -fx-font-weight: bold;" text="100">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin></TextField>
+            <Button fx:id="transformcolorID11" mnemonicParsing="false" onAction="#CMYKtoRGB" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;" text="CMYK-&gt;RGB" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</Pane>

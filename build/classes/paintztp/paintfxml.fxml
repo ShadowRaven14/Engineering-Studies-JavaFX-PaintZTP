@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1434.0" style="-fx-background-color: #FFEBCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paintztp.PaintfxmlController">
+   <children>
+      <VBox fx:id="viewBox" prefHeight="50.0" prefWidth="1280.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #F4A460;">
+               <children>
+                  <MenuButton fx:id="toolmenuID" mnemonicParsing="false" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;" text="Tool Menu">
+                    <items>
+                        <MenuItem fx:id="btnLineID" mnemonicParsing="false" onAction="#SelectLine" text="Line" />
+                        <MenuItem fx:id="btnCircleID" mnemonicParsing="false" onAction="#SelectCircle" text="Circle" />
+                        <MenuItem fx:id="btnTriangleID" mnemonicParsing="false" onAction="#SelectTriangle" text="Triangle" />
+                        <MenuItem fx:id="btnRectangleID" mnemonicParsing="false" onAction="#SelectRectangle" text="Rectangle" />
+                    </items>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <TextField fx:id="brushsizeID" alignment="CENTER" prefHeight="25.0" prefWidth="49.0" promptText="20" style="-fx-background-color: #DAA520; -fx-font-size: 18; -fx-font-weight: bold;" text="20">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ColorPicker fx:id="colorpickerID" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <value>
+                        <Color />
+                     </value>
+                  </ColorPicker>
+                  <Button fx:id="newcanvasID" mnemonicParsing="false" onAction="#NewCanvas" style="-fx-background-color: #DAA520; -fx-font-size: 17; -fx-font-weight: bold;" text="New Canvas" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Canvas fx:id="canvasID" height="640.0" layoutX="20.0" layoutY="66.0" width="1240.0" />
+      <TableView fx:id="tableviewID" layoutX="1270.0" layoutY="-2.0" prefHeight="720.0" prefWidth="166.0" style="-fx-background-color: #F5DEB3; -fx-font-size: 14;">
+        <columns>
+          <TableColumn fx:id="firstColumnID" prefWidth="163.0" style="-fx-background-color: #F5DEB3; -fx-font-size: 18;" text="Figury" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>
